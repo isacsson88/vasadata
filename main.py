@@ -53,8 +53,7 @@ plotly_config = {'displayModeBar': False, 'scrollZoom':False }
 import os
 current_dir = os.path.dirname(__file__)
 with open(os.path.join(current_dir, 'style.css')) as f:
-
-
+    style=f.read()
 # Data load & data management
 available_years = [2018, 2019, 2020, 2022, 2023, 2024, 2025, 2026]
 startgroups = ["Elit","1","2","3","4","5","6","7","8","9","10"]
