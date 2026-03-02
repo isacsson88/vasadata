@@ -52,10 +52,15 @@ plotly_config = {'displayModeBar': False, 'scrollZoom':False }
 #    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 import os
 current_dir = os.path.dirname(__file__)
-with open(os.path.join(current_dir, 'style.css')) as f:
-    style=f.read()
-# Data load & data management
+
+with open('style.css') as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)  # exempel
+
 available_years = [2018, 2019, 2020, 2022, 2023, 2024, 2025, 2026]
+
+#with open(os.path.join(current_dir, 'style.css')) as f:
+# Data load & data management
+#available_years = [2018, 2019, 2020, 2022, 2023, 2024, 2025, 2026]
 startgroups = ["Elit","1","2","3","4","5","6","7","8","9","10"]
 control_points = ["Start", "Smågan", "Mångsbodarna", "Risberg", "Evertsberg", "Oxberg", "Hökberg", "Eldris", "Finish"]
 sortorder = ["Start", "High Point", "Smågan", "Mångsbodarna", "Risberg", "Evertsberg", "Oxberg", "Hökberg", "Eldris", "Finish"]
