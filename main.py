@@ -48,8 +48,12 @@ st.set_page_config(layout="wide", page_title="VasaData - Vasaloppet Results")
 
 plotly_config = {'displayModeBar': False, 'scrollZoom':False }
 
-with open('style.css') as f:
-    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+#with open('style.css') as f:
+#    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+import os
+current_dir = os.path.dirname(__file__)
+with open(os.path.join(current_dir, 'style.css')) as f:
+
 
 # Data load & data management
 available_years = [2018, 2019, 2020, 2022, 2023, 2024, 2025, 2026]
