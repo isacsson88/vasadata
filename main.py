@@ -66,6 +66,18 @@ if os.path.exists(css_path):
 
 available_years = [2018, 2019, 2020, 2022, 2023, 2024, 2025, 2026]
 
+import os
+import urllib.request
+
+data_dir = "data"
+os.makedirs(data_dir, exist_ok=True)
+
+for year in available_years:
+    filepath = f"{data_dir}/{year}_full.parquet"
+    if not os.path.exists(filepath):
+        url = f"https://github.com/isacsson88/vasadata/tree/main/data/{year}_full.parquet"  # byt ut med riktig URL
+        urllib.request.urlretrieve(url, filepath)
+
 #with open(os.path.join(current_dir, 'style.css')) as f:
 # Data load & data management
 #available_years = [2018, 2019, 2020, 2022, 2023, 2024, 2025, 2026]
