@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  vasadata:
+    image: python:3.14-slim-bookworm
+    container_name: vasadata
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    command: >
+      sh -c "
+      apt-get update &&
+      apt-get install -y git &&
+      mkdir -p /app &&
+      git clone https://github.com/isacsson88/vasadata.git /app &&
+      pip install --no-cache-dir -r /app/requirements.txt &&
+      streamlit run /app/main.py --server.address=0.0.0.0 --server.port=8501
+      "
