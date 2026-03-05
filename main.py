@@ -50,11 +50,19 @@ plotly_config = {'displayModeBar': False, 'scrollZoom':False }
 
 #with open('style.css') as f:
 #    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-import os
-current_dir = os.path.dirname(__file__)
+#import os
+#current_dir = os.path.dirname(__file__)
+#
+#with open('style.css') as f:
+#    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)  # exempel
 
-with open('style.css') as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)  # exempel
+import os
+
+css_path = os.path.join(os.path.dirname(__file__), "style.css")
+
+if os.path.exists(css_path):
+    with open(css_path) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 available_years = [2018, 2019, 2020, 2022, 2023, 2024, 2025, 2026]
 
