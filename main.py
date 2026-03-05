@@ -75,7 +75,7 @@ os.makedirs(data_dir, exist_ok=True)
 for year in available_years:
     filepath = f"{data_dir}/{year}_full.parquet"
     if not os.path.exists(filepath):
-        url = f"https://github.com/isacsson88/vasadata/tree/main/data/{year}_full.parquet"  # byt ut med riktig URL
+        url = f"https://raw.githubusercontent.com/isacsson88/vasadata/main/data/{year}_full.parquet"  # byt ut med riktig URL
         urllib.request.urlretrieve(url, filepath)
 
 #with open(os.path.join(current_dir, 'style.css')) as f:
